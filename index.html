@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dynamic Portfolio - Shravani Jitendra Patil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    
+    
+   /* Radiant Aurora Theme */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep blue-green gradient */
+  color: #ffffff; /* White text for readability */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Subtle glow effect for body */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulse 10s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      opacity: 0.7;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(90deg, #141e30, #243b55); /* Sleek blue gradient */
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  color: #f4f4f4;
+  font-weight: bold;
+  margin: 0 15px;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+  background: #ff6f61; /* Coral hover effect */
+  color: #ffffff;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #ff6f61;
+  text-shadow: 2px 2px 5px rgba(255, 111, 97, 0.8);
+}
+
+/* Button Styling */
+button {
+  background: linear-gradient(135deg, #ff6f61, #d64550);
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 111, 97, 0.7);
+}
+
+/* Dynamic Cards */
+.card {
+  background: #243b55;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Interactive Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Text Animations */
+h1, h2, h3, p {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Footer Styling */
+footer {
+  background: #141e30;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  position: relative;
+}
+
+footer a {
+  color: #ff6f61;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #d64550;
+}
+
+
+      /* Aurora Glow Theme */
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #ff6ec7, 0 0 30px #ff6ec7, 0 0 45px #ff6ec7;
+}
+
+.navbar-brand::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #00c3ff, #ff6ec7);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+  opacity: 1;
+  width: 80px;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 5px #00c3ff;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  background: linear-gradient(90deg, #00c3ff, #ff6ec7);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px #ff6ec7;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  opacity: 1;
+  transform: scale(2);
+}
+
+.navbar-nav .nav-link.active {
+  background: linear-gradient(90deg, #ff6ec7, #00c3ff);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px #00c3ff;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+  padding: 15px 20px;
+  border-bottom: 2px solid #00c3ff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+      
+      /* Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(to right, #ff6f61, #d35400, #8e44ad); /* Aurora gradient background */
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Strong shadow for depth */
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 20px; /* Rounded edges */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Shadow for text */
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section p {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero-section button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #16a085, #27ae60);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.5);
+    transition: all 0.3s ease;
+}
+
+.hero-section button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #27ae60, #16a085);
+    box-shadow: 0 8px 20px rgba(22, 160, 133, 0.7);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f;
+}
+
+.navbar .search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.navbar .search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #2c3e50, #34495e);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.navbar .search-bar input:focus {
+    background: linear-gradient(90deg, #34495e, #2c3e50);
+    box-shadow: 0 6px 12px rgba(241, 196, 15, 0.5);
+}
+
+.navbar .search-bar .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #2c3e50, #4a69bd);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+}
+
+.footer a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+/* Animations for Hero Section */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    animation: aurora-glow 5s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes aurora-glow {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(to right, #ff6f61, #d35400, #8e44ad); /* Aurora gradient background */
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Strong shadow for depth */
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 20px; /* Rounded edges */
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Shadow for text */
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section p {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero-section button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #16a085, #27ae60);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(22, 160, 133, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hero-section button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #27ae60, #16a085);
+  box-shadow: 0 8px 20px rgba(22, 160, 133, 0.7);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 0 0 20px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f1c40f;
+}
+
+.navbar .search-bar {
+  position: relative;
+  width: 300px;
+}
+
+.navbar .search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.navbar .search-bar input:focus {
+  background: linear-gradient(90deg, #34495e, #2c3e50);
+  box-shadow: 0 6px 12px rgba(241, 196, 15, 0.5);
+}
+
+.navbar .search-bar .icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #2c3e50, #4a69bd);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 20px 20px 0 0;
+}
+
+.footer a {
+  color: #f1c40f;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Animations for Hero Section */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  animation: aurora-glow 5s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes aurora-glow {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+  
+  /* Updated Hero Section */
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #6a11cb, #2575fc); /* Vibrant gradient background */
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dynamic Gradient Background Animation */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  animation: gradient-move 5s infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes gradient-move {
+  0% {
+      transform: scale(1) translateX(0);
+  }
+  100% {
+      transform: scale(1.5) translateX(20%);
+  }
+}
+
+/* Hero Section Heading */
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  z-index: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slide-in 2s ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Subheading */
+.hero-section p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  z-index: 1;
+  animation: fade-in 2.5s ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Call to Action Button */
+.hero-section .cta-btn {
+  background: linear-gradient(90deg, #f39c12, #d35400);
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-section .cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+}
+
+/* Floating Stars Effect */
+.hero-section .stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-section .stars span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: float 10s infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100vh) translateX(-20px);
+      opacity: 0;
+  }
+}
+
+/* Generate Random Stars */
+.hero-section .stars span:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-duration: 8s;
+}
+
+.hero-section .stars span:nth-child(2) {
+  top: 40%;
+  left: 75%;
+  animation-duration: 12s;
+}
+
+.hero-section .stars span:nth-child(3) {
+  top: 60%;
+  left: 35%;
+  animation-duration: 10s;
+}
+.hero-section .stars span:nth-child(4) {
+  top: 80%;
+  left: 50%;
+  animation-duration: 7s;
+}
+.hero-section .stars span:nth-child(5) {
+  top: 10%;
+  left: 90%;
+  animation-duration: 11s;
+}
+
+/* New Hero Button */
+.hero-btn {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient background */
+  color: #fff; /* White text */
+  padding: 18px 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: left 0.4s;
+  z-index: -1;
+}
+
+.hero-btn:hover::before {
+  left: 100%;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(37, 117, 252, 0.6);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 40px 0;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Fallback for non-webkit browsers */
+  color: transparent; /* Fallback text color */
+  animation: glow 2s infinite;
+  position: relative;
+}
+
+
+@keyframes glow {
+  0%, 100% {
+      text-shadow: 0 0 10px #ff758c, 0 0 20px #ff758c, 0 0 30px #ff7eb3;
+  }
+  50% {
+      text-shadow: 0 0 20px #ff7eb3, 0 0 40px #ff7eb3, 0 0 60px #ff758c;
+  }
+}
+
+.section-title:hover {
+  transform: scale(1.1);
+}
+
+/* New About Image */
+.about-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+  padding: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.about-img:hover img {
+  transform: scale(1.2);
+}
+
+.about-img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 117, 140, 0.6);
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.about-img:hover::before {
+  opacity: 1;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .hero-btn {
+      font-size: 1rem;
+      padding: 14px 40px;
+  }
+
+  .section-title {
+      font-size: 2.2rem;
+  }
+
+  .about-img {
+      width: 250px;
+      height: 250px;
+  }
+}
+
+  
+  /* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Skills List */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  background: linear-gradient(135deg, #333, #222);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 0;
+}
+
+/* Individual Skill Item */
+.skills-list .skill-item {
+  background: linear-gradient(145deg, #4c6ef5, #2a5cfd);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover Effect for Skill Item */
+.skills-list .skill-item:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: linear-gradient(145deg, #2a5cfd, #4c6ef5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(70, 182, 255, 0.8);
+  animation: sparkle-item 1.5s infinite ease-in-out;
+}
+
+/* Sparkle Effect on Hover */
+@keyframes sparkle-item {
+  0% {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(70, 182, 255, 0.6);
+  }
+  25% {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5), 0 0 30px rgba(70, 182, 255, 0.7);
+  }
+  50% {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(70, 182, 255, 1);
+  }
+  75% {
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7), 0 0 50px rgba(70, 182, 255, 1.2);
+  }
+  100% {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(70, 182, 255, 0.6);
+  }
+}
+
+/* Add Sparkle Effect to Background */
+.skills-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+  z-index: -1;
+  animation: sparkle-background 3s infinite ease-in-out;
+}
+
+/* Sparkle Background Animation */
+@keyframes sparkle-background {
+  0% {
+      opacity: 0.3;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+  }
+  50% {
+      opacity: 0.5;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6));
+  }
+  100% {
+      opacity: 0.3;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+  }
+}
+
+/* New Animated Skill Box */
+.skills-list .skill {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect with Glow and Rotation */
+.skills-list .skill:hover {
+  transform: scale(1.1) rotate(10deg);
+  background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 123, 95, 0.7);
+  animation: sparkle-glow 2s infinite ease-in-out;
+}
+
+/* Glowing Animation */
+@keyframes sparkle-glow {
+  0% {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 123, 95, 0.6);
+  }
+  25% {
+      box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 123, 95, 0.7);
+  }
+  50% {
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 123, 95, 0.8);
+  }
+  75% {
+      box-shadow: 0 18px 25px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 123, 95, 1);
+  }
+  100% {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 123, 95, 0.6);
+  }
+}
+
+/* Inner Glowing Sparkle */
+.skills-list .skill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 123, 95, 0.6), 0 0 30px rgba(255, 123, 95, 0.8), 0 0 40px rgba(255, 123, 95, 1);
+  z-index: -1;
+  animation: sparkle-background 2s infinite ease-in-out;
+}
+
+  
+  /* Optional sparkle effect for the inner content */
+  .skills-list .skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    z-index: -1;
+    animation: sparkle-background 2s infinite linear;
+  }
+  
+  /* Sparkle Background Animation */
+  @keyframes sparkle-background {
+    0% {
+      box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.6), 0 0 40px rgba(102, 252, 241, 1), 0 0 60px rgba(102, 252, 241, 1.2);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    }
+  }
+  
+    
+   /* Skills List Individual Skill Hover with Sparkle Black and Dynamic UI */
+.skills-list .skill:hover {
+    transform: translateY(-5px); /* Slightly lift the skill item */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25), 0 0 15px rgba(102, 252, 241, 0.8); /* Glow shadow */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Slight color change */
+    animation: sparkle-glow 1.5s infinite ease-in-out; /* Sparkle glow animation */
+    z-index: 1;
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(102, 252, 241, 0.4);
+    }
+    25% {
+      box-shadow: 0 14px 22px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.6);
+    }
+    50% {
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25), 0 0 30px rgba(102, 252, 241, 1);
+    }
+    75% {
+      box-shadow: 0 18px 26px rgba(0, 0, 0, 0.3), 0 0 35px rgba(102, 252, 241, 1);
+    }
+    100% {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+   /* Skills List Individual Skill Active State with Sparkle Black and Dynamic UI */
+.skills-list .skill:active {
+    transform: translateY(2px); /* Slightly push the skill item down when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(102, 252, 241, 0.8); /* Soft shadow with sparkle */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Keep the hover effect */
+    animation: sparkle-press 0.5s ease-out; /* Sparkle effect when clicked */
+    z-index: 1;
+  }
+  
+  /* Sparkle Press Animation */
+  @keyframes sparkle-press {
+    0% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.8);
+    }
+    100% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+    
+    /* Project Card with Sparkle Black and Dynamic UI */
+.project-card {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-color: #1e1e1e; /* Dark background for the sparkle effect */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(102, 252, 241, 0.6); /* Soft shadow with glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative; /* Ensure the hover effect is on top */
+  }
+  
+  /* Add subtle glow on hover */
+  .project-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(102, 252, 241, 0.8); /* Stronger shadow and glow */
+    border-color: #2575fc; /* Add a bright blue glow effect on the border */
+  }
+  
+  /* Sparkle Effect Animation on Hover */
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.2), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card:hover::before {
+    opacity: 1;
+    animation: sparkle-glow 1.5s infinite ease-out; /* Sparkle animation */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25), 0 0 40px rgba(102, 252, 241, 0.8);
+    }
+    100% {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+    /* Project Card Hover with Sparkle Black and Dynamic UI */
+.project-card {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-color: #1e1e1e; /* Dark background for the sparkle effect */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(102, 252, 241, 0.6); /* Soft shadow with glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative; /* Ensure the hover effect is on top */
+  }
+  
+  /* Hover Effect */
+  .project-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 40px rgba(102, 252, 241, 0.8); /* Enhanced shadow and glow */
+    border-color: #6a11cb; /* Vibrant purple-blue border on hover */
+    animation: sparkle-hover 1.5s ease-in-out infinite; /* Sparkle animation on hover */
+  }
+  
+  /* Sparkle Hover Animation */
+  @keyframes sparkle-hover {
+    0% {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3), 0 0 45px rgba(102, 252, 241, 0.9);
+    }
+    100% {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+  /* Adding Subtle Sparkle Border Effect */
+  .project-card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.2), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card:hover::before {
+    opacity: 1; /* Show the sparkle effect */
+  }
+  
+    
+    /* Project Card Image with Sparkle Black and Dynamic UI */
+.project-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    border-radius: 15px; /* Rounded corners to match the card's style */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Hover Effect */
+  .project-card img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(1.2) contrast(1.2); /* Enhance brightness and contrast for emphasis */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 252, 241, 0.6); /* Stronger shadow and glow */
+    border: 4px solid #6a11cb; /* Add a glowing border effect */
+  }
+  
+  /* Subtle Sparkle Effect on Hover */
+  .project-card img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent);
+    z-index: -1; /* Ensure the sparkle effect is behind the image */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card img:hover::after {
+    opacity: 1; /* Show the sparkle effect on hover */
+  }
+  
+    
+    /* Project Card Image Hover Effect with Sparkle Black and Dynamic UI */
+.project-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover; /* Ensures the image fits without distortion */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    border-radius: 15px; /* Rounded corners for a sleek look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Hover Effect */
+  .project-card img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    filter: brightness(0.9); /* Darken the image slightly */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(102, 252, 241, 0.6); /* Enhanced shadow with glow */
+    border: 4px solid #6a11cb; /* Glowing border on hover */
+  }
+  
+  /* Sparkle Effect on Hover */
+  .project-card img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent); /* Soft glowing sparkle */
+    z-index: -1; /* Keep the sparkle behind the image */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+  }
+  
+  .project-card img:hover::after {
+    opacity: 1; /* Reveal the sparkle on hover */
+  }
+  
+    
+    /* Project Card Body with Sparkle Black and Dynamic UI */
+.project-card .card-body {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc); /* Gradient background */
+    color: #ffffff;
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    position: relative;
+  }
+  
+  /* Hover Effect - Dynamic Glow and Movement */
+  .project-card .card-body:hover {
+    background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Shift gradient for hover effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(102, 252, 241, 0.6); /* Enhanced shadow with glow */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    z-index: 1; /* Bring card to the forefront */
+  }
+  
+  /* Sparkle Effect */
+  .project-card .card-body:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent); /* Soft glowing sparkle */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    z-index: -1; /* Ensure sparkle stays behind text and content */
+  }
+  
+  .project-card .card-body:hover::after {
+    opacity: 1; /* Show the sparkle effect on hover */
+  }
+  
+  /* Text Enhancements */
+  .project-card .card-body h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  }
+  
+  .project-card .card-body p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card .card-body:hover p {
+    opacity: 1; /* Text becomes fully visible on hover */
+  }
+  
+    
+    /* Project Card Title */
+.project-card .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Soft white for a sleek contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft glow for text */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Hover effect on Card Title */
+  .project-card .card-title:hover {
+    color: #e74c3c; /* Highlight the title on hover */
+    text-shadow: 2px 2px 15px rgba(231, 76, 60, 0.7); /* Bright red glow effect */
+  }
+  
+  /* Project Card Text */
+  .project-card .card-text {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #ecf0f1; /* Slightly muted text color for readability */
+    line-height: 1.6;
+    transition: opacity 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover effect on Card Text */
+  .project-card .card-text:hover {
+    opacity: 1; /* Increase opacity on hover for better visibility */
+    color: #bdc3c7; /* Slight change in color on hover */
+  }
+  
+  /* Project Card Button */
+  .project-card .card-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background-color: #6a11cb; /* Purple background */
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative; /* To position the glowing effect */
+    z-index: 1;
+  }
+  
+  /* Hover effect on Card Button */
+  .project-card .card-btn:hover {
+    background-color: #e74c3c; /* Change to a red hue on hover */
+    color: #ffffff;
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Sparkle Glow on Button */
+  .project-card .card-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.5), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkleGlow 1s infinite; /* Add continuous glowing effect */
+    z-index: -1; /* Keep behind the text */
+  }
+  
+  /* Sparkle Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+    
+    
+    /* CV Link */
+.cv-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #2c3e50; /* Dark background */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; /* To position the glowing effect */
+    z-index: 1;
+  }
+  
+  /* Hover effect on CV Link */
+  .cv-link:hover {
+    background-color: #e74c3c; /* Red background on hover */
+    color: white;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+  }
+  
+  /* Sparkle effect on Hover */
+  .cv-link:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.5), transparent); /* Sparkle glow */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkleGlow 1s infinite; /* Add continuous glowing effect */
+    z-index: -1; /* Keep the effect behind the text */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+    
+    /* Footer */
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient background for depth */
+    color: white;
+    padding: 30px 20px; /* Adjusted padding to minimize bottom space */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Softer, larger shadow for depth */
+    border-top: 3px solid #e74c3c; /* Subtle red border at the top */
+    z-index: 1;
+    margin-bottom: 0; /* Removed margin to prevent extra space below */
+  }
+  
+  /* Footer Link Styling */
+  .footer-link {
+    color: #f5f5f5; /* Light gray color for links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.3rem; /* Slightly larger text */
+    position: relative;
+    padding: 5px;
+    transition: all 0.3s ease; /* Smooth all hover effects */
+    display: inline-block; /* Align links next to each other */
+    font-weight: 600; /* Bolder text for more emphasis */
+  }
+  
+  /* Footer Link Hover Effect */
+  .footer-link:hover {
+    color: #e74c3c; /* Bright red hover effect */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deepened shadow on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  
+  /* Footer Link Glow Effect on Hover */
+  .footer-link:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.6), transparent); /* Brighter sparkle glow */
+    animation: sparkleGlow 1.2s infinite; /* Faster glowing animation */
+    z-index: -1; /* Behind the text */
+  }
+  
+  /* Icon Spacing and Style */
+  .footer-link i {
+    margin-right: 12px; /* Increase space between icon and text */
+    font-size: 1.6rem; /* Larger icons for better visibility */
+    transition: transform 0.3s ease; /* Smooth animation for icon */
+  }
+  
+  .footer-link:hover i {
+    transform: rotate(15deg); /* Slight rotation effect on hover */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Remove any extra space below the page */
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    margin-top: auto; /* Push the footer to the bottom of the page */
+  }
+  
+    
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Shravani Jitendra Patil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Hi, I'm Shravani Jitendra Patil</h1>
+      <p>A passionate Computer Engineering student eager to learn and grow.</p>
+      <a href="shravani_cv.pdf" class="btn btn-light">View My CV</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container my-5">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="Isha.jpeg" alt="Shravani" class="about-img">
+      </div>
+      <div class="col-md-6">
+        <p><b>Hello! I'm Shravani, a Computer Engineering Student at R C Patel Institute of Technology. I love exploring new technologies and creating projects to enhance my skills.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container my-5">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Java</div>
+      <div class="skill">Spring</div>
+      <div class="skill">HTML/CSS</div>
+      <div class="skill">Python</div>
+      <div class="skill">SQL</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container my-5">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+      <!-- 6 Project Cards -->
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="BookChef1.jpeg" class="card-img-top" alt="BookChef">
+          <div class="card-body">
+            <h5 class="card-title"><b>BookChef</b></h5>
+            <p>The BookChef Project is an online chef booking platform developed using Java. This system allows users to browse and book chefs for various occasions or personal cooking sessions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="ExamOrg1.jpeg" class="card-img-top" alt="Online Exam">
+          <div class="card-body">
+            <h5 class="card-title"><b>Online Examination System</b></h5>
+            <p>The Online Examination System project I developed using Java is a web-based platform that allows efficient management of exams. It provides different roles for Admin, Teachers, and Students</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="SocialMedia1.jpeg" class="card-img-top" alt="Talkzi">
+          <div class="card-body">
+            <h5 class="card-title"><b>Talkzi Social Media</b></h5>
+            <p>The Talkzi Social Media Platform is a web project built using Java, JSP, and MySQL. It allows users to sign up, log in, share posts, like, comment, and chat with others.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Inventory1.jpeg" class="card-img-top" alt="Inventory">
+          <div class="card-body">
+            <h5 class="card-title"><b>Inventory Management</b></h5>
+            <p>The Inventory Management System is a Java-based application designed to efficiently manage raw and processed materials. It includes features for adding, updating,viewing as well as issuing materials.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Amazon1.jpeg" class="card-img-top" alt="Bank">
+          <div class="card-body">
+            <h5 class="card-title"><b>Amazon Clone</b></h5>
+            <p>The Amazon Clone project is a simplified e-commerce website built using HTML and CSS to replicate the core UI features of Amazon's homepage. It includes a visually appealing layout with a responsive design. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Expense1.jpeg" class="card-img-top" alt="Grade Tracker">
+          <div class="card-body">
+            <h5 class="card-title"><b>Expense Tracker</b></h5>
+            <p>The Expense Tracker project is a Python-based application designed to help users efficiently manage their finances. It allows users to record their income and expenses. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Section -->
+  
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Shravani Jitendra Patil. All Rights Reserved.</p>
+    <p>
+      <a href="https://github.com/Shravani-Jitendra-Patil" target="_blank" class="footer-link">
+        <i class="fab fa-github"></i> GitHub
+      </a> |
+      <a href="https://www.linkedin.com/in/shravani-patil-9536051b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a> |
+      <a href="https://x.com/Shravanipatil27?t=zktCV6heBRtI-7twohMbNA&s=09" target="_blank" class="footer-link">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    </p>
+  </footer>
+  
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
